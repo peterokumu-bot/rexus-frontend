@@ -1,6 +1,6 @@
 'use client';
 
-import Navbar from '@/components/Navbar';
+import AppLayout from '@/components/layout/AppLayout';
 import Link from 'next/link';
 import { useSearchParams } from 'next/navigation';
 
@@ -12,11 +12,9 @@ export default function OrderSuccessPage() {
   const orderId =
     searchParams.get('orderId');
 
-  return (
-    <>
-      <Navbar />
-
-      <main className="min-h-screen bg-gray-100 flex items-center justify-center p-8">
+ return (
+  <AppLayout>
+    <main className="min-h-screen bg-gray-100 flex items-center justify-center p-8">
 
         <div className="bg-white rounded-3xl shadow-xl p-12 max-w-3xl w-full">
 
@@ -137,6 +135,6 @@ export default function OrderSuccessPage() {
         </div>
 
       </main>
-    </>
-  );
+  </AppLayout>
+);
 }

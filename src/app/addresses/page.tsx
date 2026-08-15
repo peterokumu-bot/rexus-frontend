@@ -3,8 +3,7 @@
 import { useEffect, useState }
 from 'react';
 
-import Navbar
-from '@/components/Navbar';
+import AppLayout from '@/components/layout/AppLayout';
 
 import api
 from '@/lib/api';
@@ -132,10 +131,9 @@ export default function AddressesPage() {
 
   return (
 
-    <>
-      <Navbar />
-
-      <main className="min-h-screen bg-gray-100 p-8">
+    return (
+  <AppLayout>
+    <main className="min-h-screen bg-gray-100 p-8">
 
         <div className="max-w-6xl mx-auto">
 
@@ -381,7 +379,7 @@ export default function AddressesPage() {
 
         </div>
 
-      </main>
-    </>
-  );
+   </main>
+  </AppLayout>
+);
 }

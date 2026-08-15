@@ -1,6 +1,6 @@
 'use client';
 
-import Navbar from '@/components/Navbar';
+import AppLayout from '@/components/layout/AppLayout';
 import { useParams } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import api from '@/lib/api';
@@ -84,31 +84,25 @@ useEffect(() => {
 }, [orderId]);
 
 if (loading) {
-
   return (
-    <>
-      <Navbar />
+    <AppLayout>
       <div className="p-10 text-center text-xl">
         Loading Order...
       </div>
-    </>
+    </AppLayout>
   );
-
 }
 
 if (!order) {
-
   return (
-    <>
-      <Navbar />
+    <AppLayout>
       <div className="p-10 text-center">
         <h1 className="text-3xl font-bold">
           Order Not Found
         </h1>
       </div>
-    </>
+    </AppLayout>
   );
-
 }
 
   const rexoEarned =
@@ -117,11 +111,8 @@ if (!order) {
       : Number(order.walletUsed || 0) / 5000;
 
   return (
-    <>
-      <Navbar />
-
-      <main className="min-h-screen bg-slate-100 py-10">
-
+  <AppLayout>
+    <main className="min-h-screen bg-slate-100 py-10">
         <div className="max-w-5xl mx-auto">
 
           <div className="bg-white shadow-2xl border border-gray-200">
@@ -782,7 +773,7 @@ if (!order) {
 
         </div>
 
-      </main>
-    </>
-  );
+     </main>
+  </AppLayout>
+);
 }
