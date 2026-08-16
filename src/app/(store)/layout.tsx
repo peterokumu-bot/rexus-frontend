@@ -1,17 +1,6 @@
 import type { ReactNode } from 'react';
-
 import AppLayout from '@/components/layout/AppLayout';
 
-interface StoreLayoutProps {
-  children: ReactNode;
-}
-
-export default function StoreLayout({
-  children,
-}: StoreLayoutProps) {
-  return (
-    <AppLayout>
-      {children}
-    </AppLayout>
-  );
+export default function StoreLayout({ children }: { children: ReactNode }) {
+  return <AppLayout>{children}</AppLayout>;
 }

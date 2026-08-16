@@ -1,22 +1,8 @@
 import type { ReactNode } from 'react';
 
-interface AuthLayoutProps {
-  children: ReactNode;
-}
-
-export default function AuthLayout({
-  children,
-}: AuthLayoutProps) {
+export default function AuthLayout({ children }: { children: ReactNode }) {
   return (
-    <main
-      className="
-        flex
-        min-h-screen
-        items-center
-        justify-center
-        bg-[#FAFAF8]
-      "
-    >
+    <main className="flex min-h-screen items-center justify-center bg-[#FAFAF8]">
       {children}
     </main>
   );
