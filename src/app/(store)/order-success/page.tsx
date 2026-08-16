@@ -3,14 +3,13 @@
 import { Suspense } from 'react';
 import Link from 'next/link';
 import { useSearchParams } from 'next/navigation';
-import AppLayout from '@/components/layout/AppLayout';
 
 function OrderSuccessContent() {
   const searchParams = useSearchParams();
   const orderId = searchParams.get('orderId');
 
   return (
-    <AppLayout>
+    <>
       <main className="flex min-h-screen items-center justify-center bg-gray-100 p-8">
         <div className="w-full max-w-3xl rounded-3xl bg-white p-12 shadow-xl">
           <div className="text-center">
@@ -71,19 +70,13 @@ function OrderSuccessContent() {
           </div>
         </div>
       </main>
-    </AppLayout>
+    </>
   );
 }
 
 export default function OrderSuccessPage() {
   return (
-    <Suspense
-      fallback={
-        <AppLayout>
-          <div className="p-10 text-center">Loading...</div>
-        </AppLayout>
-      }
-    >
+    <Suspense fallback={<div className="p-10 text-center">Loading...</div>}>
       <OrderSuccessContent />
     </Suspense>
   );

@@ -1,11 +1,10 @@
 'use client';
 
-import { useSearchParams } from 'next/navigation';
-import { useEffect, useState } from 'react';
+import { Suspense, useEffect, useState } from 'react';
+import { useSearchParams, useRouter } from 'next/navigation';
 import api from '@/lib/api';
-import { useRouter } from 'next/navigation';
 
-export default function GuestPaymentPage() {
+function GuestPaymentContent() {
   const searchParams = useSearchParams();
   const orderId = searchParams.get('orderId');
   const router = useRouter();
@@ -297,5 +296,13 @@ export default function GuestPaymentPage() {
         </div>
       </div>
     </main>
+  );
+}
+
+export default function GuestPaymentPage() {
+  return (
+    <Suspense fallback={<div className="min-h-screen flex items-center justify-center">Loading...</div>}>
+      <GuestPaymentContent />
+    </Suspense>
   );
 }

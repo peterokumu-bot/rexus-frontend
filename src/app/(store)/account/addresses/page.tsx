@@ -3,8 +3,6 @@
 import { useEffect, useState }
 from 'react';
 
-import AppLayout from '@/components/layout/AppLayout';
-
 import api
 from '@/lib/api';
 
@@ -130,7 +128,7 @@ export default function AddressesPage() {
   }
 
     return (
-    <AppLayout>
+    <>
       <main className="min-h-screen bg-gray-100 p-8">
         <div className="max-w-6xl mx-auto">
           {/* HEADER */}
@@ -276,6 +274,6 @@ export default function AddressesPage() {
           </div>
         </div>
       </main>
-    </AppLayout>
+    </>
   );
 }

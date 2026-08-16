@@ -1,8 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import api from '../../lib/api';
-import AppLayout from '@/components/layout/AppLayout';
+import api from '@/lib/api';
 import Container from '@/components/layout/Container';
 
 import CartItem from '@/components/cart/CartItem';
@@ -168,7 +167,7 @@ export default function CartPage() {
   }
 
   return (
-    <AppLayout>
+    <>
 
       <section className="py-10">
 
@@ -275,6 +274,6 @@ export default function CartPage() {
          </Container>
         
 </section>
-  </AppLayout>
+  </>
   );
 }

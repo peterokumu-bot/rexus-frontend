@@ -13,7 +13,6 @@ import {
   ArrowRight,
 } from 'lucide-react';
 
-import AppLayout from '@/components/layout/AppLayout';
 import Container from '@/components/layout/Container';
 
 import { useApp } from '@/context/AppContext';
@@ -47,7 +46,7 @@ export default function ProfilePage() {
   })();
 
   return (
-    <AppLayout>
+    <>
 
       <main className="min-h-screen bg-rexo-background py-12">
 
@@ -267,7 +266,7 @@ export default function ProfilePage() {
 
       </main>
 
-    </AppLayout>
+    </>
   );
 }
 

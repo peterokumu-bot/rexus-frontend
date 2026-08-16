@@ -5,7 +5,6 @@ import Link from 'next/link';
 import toast from 'react-hot-toast';
 
 import api from '@/lib/api';
-import AppLayout from '@/components/layout/AppLayout';
 import Container from '@/components/layout/Container';
 
 import { Package } from 'lucide-react';
@@ -59,7 +58,7 @@ export default function OrdersPage() {
   }, [fetchOrders]);
 
   return (
-    <AppLayout>
+    <>
 
       <section className="py-10">
 
@@ -239,6 +238,6 @@ export default function OrdersPage() {
 
       </section>
 
-    </AppLayout>
+    </>
   );
 }

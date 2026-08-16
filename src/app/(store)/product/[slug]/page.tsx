@@ -22,7 +22,6 @@ import {
 
 import { useParams, useRouter } from 'next/navigation';
 
-import AppLayout from '@/components/layout/AppLayout';
 import Container from '@/components/layout/Container';
 import CatalogItem from '@/components/catalog/CatalogItem';
 
@@ -162,13 +161,11 @@ export default function ProductPage() {
 
   if (loading) {
     return (
-      <AppLayout>
-        <Container>
-          <div className="flex h-[70vh] items-center justify-center">
-            <p className="text-xl">Loading Product...</p>
-          </div>
-        </Container>
-      </AppLayout>
+      <Container>
+        <div className="flex h-[70vh] items-center justify-center">
+          <p className="text-xl">Loading Product...</p>
+        </div>
+      </Container>
     );
   }
 
@@ -178,19 +175,17 @@ export default function ProductPage() {
 
   if (!product) {
     return (
-      <AppLayout>
-        <Container>
-          <div className="flex h-[70vh] flex-col items-center justify-center">
-            <h2 className="text-4xl font-black">Product Not Found</h2>
-            <button
-              onClick={() => router.push('/products')}
-              className="mt-8 rounded-full bg-rexo-primary px-8 py-3 font-semibold text-white"
-            >
-              Continue Shopping
-            </button>
-          </div>
-        </Container>
-      </AppLayout>
+      <Container>
+        <div className="flex h-[70vh] flex-col items-center justify-center">
+          <h2 className="text-4xl font-black">Product Not Found</h2>
+          <button
+            onClick={() => router.push('/products')}
+            className="mt-8 rounded-full bg-rexo-primary px-8 py-3 font-semibold text-white"
+          >
+            Continue Shopping
+          </button>
+        </div>
+      </Container>
     );
   }
 
@@ -199,7 +194,7 @@ export default function ProductPage() {
   ===================================================== */
 
   return (
-    <AppLayout>
+    <>
       <Container className="max-w-[1700px]">
         <main className="py-8">
           {/* Breadcrumb */}
@@ -646,6 +641,6 @@ export default function ProductPage() {
           </section>
         </main>
       </Container>
-    </AppLayout>
+    </>
   );
 }

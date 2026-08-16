@@ -1,6 +1,5 @@
 'use client';
 
-import AppLayout from '@/components/layout/AppLayout';
 import { useParams } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import api from '@/lib/api';
@@ -85,23 +84,19 @@ useEffect(() => {
 
 if (loading) {
   return (
-    <AppLayout>
-      <div className="p-10 text-center text-xl">
-        Loading Order...
-      </div>
-    </AppLayout>
+    <div className="p-10 text-center text-xl">
+      Loading Order...
+    </div>
   );
 }
 
 if (!order) {
   return (
-    <AppLayout>
-      <div className="p-10 text-center">
-        <h1 className="text-3xl font-bold">
-          Order Not Found
-        </h1>
-      </div>
-    </AppLayout>
+    <div className="p-10 text-center">
+      <h1 className="text-3xl font-bold">
+        Order Not Found
+      </h1>
+    </div>
   );
 }
 
@@ -111,7 +106,7 @@ if (!order) {
       : Number(order.walletUsed || 0) / 5000;
 
   return (
-  <AppLayout>
+  <>
     <main className="min-h-screen bg-slate-100 py-10">
         <div className="max-w-5xl mx-auto">
 
@@ -774,6 +769,6 @@ if (!order) {
         </div>
 
      </main>
-  </AppLayout>
+  </>
 );
 }

@@ -4,7 +4,6 @@ import { Suspense, useEffect, useState } from 'react';
 import { useSearchParams } from 'next/navigation';
 import toast from 'react-hot-toast';
 
-import AppLayout from '@/components/layout/AppLayout';
 import Container from '@/components/layout/Container';
 import api from '@/lib/api';
 import { useApp } from '@/context/AppContext';
@@ -79,15 +78,11 @@ function PaymentPageContent() {
   }
 
   if (loading) {
-    return (
-      <AppLayout>
-        <div className="p-10 text-center">Loading...</div>
-      </AppLayout>
-    );
+    return <div className="p-10 text-center">Loading...</div>;
   }
 
   return (
-    <AppLayout>
+    <>
       <section className="bg-[#fafaf8] py-12">
         <Container>
           <div className="mx-auto max-w-4xl">
@@ -234,19 +229,13 @@ function PaymentPageContent() {
           </div>
         </Container>
       </section>
-    </AppLayout>
+    </>
   );
 }
 
 export default function PaymentPage() {
   return (
-    <Suspense
-      fallback={
-        <AppLayout>
-          <div className="p-10 text-center">Loading...</div>
-        </AppLayout>
-      }
-    >
+    <Suspense fallback={<div className="p-10 text-center">Loading...</div>}>
       <PaymentPageContent />
     </Suspense>
   );

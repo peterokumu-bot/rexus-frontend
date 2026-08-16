@@ -2,7 +2,6 @@
 
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
-import AppLayout from '@/components/layout/AppLayout';
 import api from '@/lib/api';
 import {
   normalizeName,
@@ -154,7 +153,7 @@ if (!emailValid) {
 }
 
   return (
-  <AppLayout>
+  <>
     <main className="min-h-screen bg-gray-100 py-10 px-6">
 
         <div className="max-w-3xl mx-auto bg-white rounded-3xl shadow-lg p-10">
@@ -467,6 +466,6 @@ if (!emailValid) {
 
         </div>
       </main>
-  </AppLayout>
+  </>
 );
 }

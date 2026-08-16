@@ -8,7 +8,6 @@ import api from '@/lib/api';
 import { useApp } from '@/context/AppContext';
 import { Product } from '@/types/product';
 
-import AppLayout from '@/components/layout/AppLayout';
 import Container from '@/components/layout/Container';
 
 import Hero from '@/components/hero/Hero';
@@ -103,7 +102,7 @@ export default function HomePage() {
   };
 
  return (
-  <AppLayout>
+  <>
 
       <Hero />
 
@@ -167,6 +166,6 @@ export default function HomePage() {
 
 </section>
 
-     </AppLayout>
+     </>
   );
 }
